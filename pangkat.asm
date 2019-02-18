@@ -19,11 +19,11 @@ main:
 	add esp,8
 	
 	mov ecx, [a] ;5
-	mov eax, 2 ; sebagai sum=0 jadinya sum=sum+ecx
+	mov eax, 2 ; 
 	
 L1:
-	add eax, eax ; ecx sebagai i jadinya sum=sum+i
-	loop L1 ;di looping sistemnya ngedecrement ecx  0+5=5+4=9+3=12+2=14+1=15
+	add eax, eax ; eax*eax
+	loop L1 ;di looping sistemnya ngedecrement nilai ecx, pokoknya indeks kesimpen ke ecx
 	
 bagi:
 	cdq                          
