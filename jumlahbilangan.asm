@@ -1,4 +1,6 @@
-n fflush
+extern scanf
+extern printf
+extern fflush
  
 segment .data
     nilai db "%d",0
