@@ -34,7 +34,7 @@ main:
      
     fld dword[result1]  ;diload ke sto
     fld dword[result2]  ;diload ke st1
-    faddp               ;nambahin sto dan st1
+    faddp               ;nambahin sto dan st1,hasilnya disimpan kembali ke ST0
      
     fsqrt                    ;Menghitung akar kuadrat dari ST0, hasilnya disimpan kembali ke ST0
     fstp qword[result]
