@@ -17,11 +17,10 @@ main:
     push diameter
     push input
     call scanf
-     
-    fld dword[diameter]   ;
-    push dword[diameter]  ;
-    fldpi                 ;ini phi dimasukin ke sto (top of stack
-    fmulp                 ;
+    
+    fldpi                 ;ini phi dimasukin ke sto (top of stack)
+    fld dword[diameter]   ;ini berarti st1
+    fmulp                 ;gunanya buat ngaliin sto dan st1
     fstp qword[result]    ;fstp buat copy hasilnya ke result
      
     push dword[result+4]
