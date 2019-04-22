@@ -7,11 +7,11 @@ section .data
     output db "%f", 10, 0
           
 section .bss
-    satu resd 1			;bil1
-    dua resd 1			;bil2
+    satu resd 1		;bil1
+    dua resd 1		;bil2
     result resd 1		;resultakhir
-    result1 resd 1		;result kuadrat bil1
-    result2 resd 1		;result kuadrat bil2
+    result1 resd 1	;result kuadrat bil1
+    result2 resd 1	;result kuadrat bil2
      
 section .text
     global main
@@ -24,19 +24,19 @@ main:
      
     fld dword[satu]		;satu masuk sto
     fld dword[satu]		;satu masuk st1
-    fmulp				      ;ngaliin sto*st1
-    fstp dword[result1]
+    fmulp				;ngaliin sto*st1
+    fstp dword[result1]       ;copy atau pop hasilnya ke result1
      
-    fld dword[dua]
-    fld dword[dua]
-    fmulp
-    fstp dword[result2]
+    fld dword[dua]            ;dua masuk sto
+    fld dword[dua]            ;dua masuk st1
+    fmulp                     ;ngaliin sti*st1
+    fstp dword[result2]       
      
-    fld dword[result1]
-    fld dword[result2]
-    faddp
+    fld dword[result1]  ;diload ke sto
+    fld dword[result2]  ;diload ke st1
+    faddp               ;nambahin sto dan st1
      
-    fsqrt
+    fsqrt                    ;Menghitung akar kuadrat dari ST0, hasilnya disimpan kembali ke ST0
     fstp qword[result]
      
     push dword[result+4]
