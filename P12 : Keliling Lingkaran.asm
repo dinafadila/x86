@@ -23,9 +23,9 @@ main:
     fmulp                 ;gunanya buat ngaliin sto dan st1
     fstp qword[result]    ;fstp buat copy hasilnya ke result
      
-    push dword[result+4]
-    push dword[result]
-    push output
+    push dword[result+4]  ;buat akses angka yang komanya selalu 4
+    push dword[result]    
+    push output               
     call printf
      
 exit:
