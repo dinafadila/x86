@@ -18,26 +18,26 @@ section .text
            
 main:
 	push n			;buat baca banyaknya bilangan
-    push banyak
-    call scanf
+    	push banyak
+    	call scanf
     
-    mov edi, [n]	
-	fld qword[sum]
+   	mov edi, [n]	
+	fld qword[sum]		;buat sum=0, masuk st0
 	
 .loop:
-	push bil
+	push bil		;baca terus bilangannya sampai 3 kali
 	push input
 	call scanf
 	add esp, 8
 	
-	fadd dword[bil]
+	fadd dword[bil]		;nambah bilangan st0 + st1, sum=sum+bil; hasilnya ke st0
 	
-	sub edi, 1
+	sub edi, 1		;buat ngurangin edi
 	cmp edi, 0
-	jne .loop
+	jne .loop		;kalo edinya belom 0 balik ke .loop
 
 
-	fidiv dword[n]
+	fidiv dword[n]		;Membagi ST0 dengan integer pada memori, hasilnya disimpan ke ST0
 	fst qword[result]
 	
 	push dword[result+4]
