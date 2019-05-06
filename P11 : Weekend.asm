@@ -1,25 +1,3 @@
-global main
-extern printf, fflush, scanf
-          
-section .data
-    input db "%s", 0
-    printday db "weekday",10,0
-    printend db "weekend",10,0
-    sun db "Sun",0
-    sat db "Sat",0
-     
-section .bss
-    string1 resb 10
-    string2 resb 10
- 
-section .text
-    global main
-     
-main:
-    push string1
-    push input
-    call scanf
-    add esp,8global main
 extern printf, fflush, scanf
           
 section .data
